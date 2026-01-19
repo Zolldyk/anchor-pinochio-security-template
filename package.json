@@ -1,0 +1,19 @@
+{
+  "name": "anchor-pinochio-security-template",
+  "version": "1.0.0",
+  "description": "Educational Solana smart contract security patterns",
+  "scripts": {
+    "build": "./scripts/build-all.sh",
+    "test": "./scripts/test-all.sh",
+    "test:01": "cd patterns/01-missing-validation && anchor test",
+    "test:02": "cd patterns/02-authority-checks && anchor test",
+    "test:03": "cd patterns/03-unsafe-arithmetic && anchor test",
+    "test:04": "cd patterns/04-cpi-reentrancy && anchor test",
+    "test:05": "cd patterns/05-pda-derivation && anchor test",
+    "test:06": "cd patterns/06-token-validation && anchor test",
+    "deploy": "./scripts/deploy-devnet.sh",
+    "verify": "./scripts/verify.sh",
+    "lint": "cargo clippy --all-targets -- -D warnings",
+    "format": "cargo fmt --all"
+  }
+}
