@@ -2,8 +2,11 @@
 resolver = "2"
 
 members = [
+    "patterns/00-spike-pinocchio",
     "patterns/01-missing-validation/programs/vulnerable",
     "patterns/01-missing-validation/programs/secure",
+    "patterns/01-missing-validation/pinocchio-programs/pinocchio-vulnerable",
+    "patterns/01-missing-validation/pinocchio-programs/pinocchio-secure",
     # TODO: Uncomment when pattern is implemented
     # "patterns/02-authority-checks/programs/vulnerable",
     # "patterns/02-authority-checks/programs/secure",

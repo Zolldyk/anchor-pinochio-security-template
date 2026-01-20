@@ -6,8 +6,12 @@ wallet = "~/.config/solana/id.json"
 url = "http://localhost:8899"
 
 [programs.localnet]
+# Anchor programs
 vulnerable_missing_validation = "Bkh2Wph3fz5iNNcUFy585rRjrRPniCpKs7T3DZZVYeYb"
-secure_missing_validation = "F1TPTovfsL5zGYWdD7xbPT9BFRhEWqpZuSK5Daif2Wd7"
+secure_missing_validation = "78x68Ufm5nCVRUpyzdKd1VjZk7gFeNNFVryqT48mE1kL"
+# Pinocchio programs (native Rust, non-Anchor)
+pinocchio_vulnerable_missing_validation = "FTu4tEsgTb1WJPdvxHYFULT7ocvfDpjSsBcFJu6VqYpR"
+pinocchio_secure_missing_validation = "ENZfh7vCvh9qvbKNQgWDvThLcmaR95qAfzuourgUCMqq"
 
 [scripts]
 test = "npx ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
