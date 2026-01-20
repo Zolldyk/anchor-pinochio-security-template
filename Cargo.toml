@@ -7,9 +7,10 @@ members = [
     "patterns/01-missing-validation/programs/secure",
     "patterns/01-missing-validation/pinocchio-programs/pinocchio-vulnerable",
     "patterns/01-missing-validation/pinocchio-programs/pinocchio-secure",
-    # TODO: Uncomment when pattern is implemented
-    # "patterns/02-authority-checks/programs/vulnerable",
-    # "patterns/02-authority-checks/programs/secure",
+    "patterns/02-authority-checks/programs/vulnerable",
+    "patterns/02-authority-checks/programs/secure",
+    "patterns/02-authority-checks/pinocchio-programs/pinocchio-vulnerable",
+    "patterns/02-authority-checks/pinocchio-programs/pinocchio-secure",
     # TODO: Uncomment when pattern is implemented
     # "patterns/03-unsafe-arithmetic/programs/vulnerable",
     # "patterns/03-unsafe-arithmetic/programs/secure",

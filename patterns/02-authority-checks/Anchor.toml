@@ -2,12 +2,17 @@
 cluster = "localnet"
 wallet = "~/.config/solana/id.json"
 
+[test]
+startup_wait = 10000
+
 [test.validator]
 url = "http://localhost:8899"
 
 [programs.localnet]
-vulnerable_authority_checks = "VuLnAuThOrItYcHeCkS111111111111111111111111"
-secure_authority_checks = "SeCuReAuThOrItYcHeCkS11111111111111111111"
+vulnerable_authority_checks = "hZ1d6UbD6akV9gW8JrCHrtVrD889bW3aLQFaesgm9eh"
+secure_authority_checks = "7EjQ3phjWPknKc5ASAdcA91ikNXhNapNvbMRStxJ3R7f"
+pinocchio_vulnerable_authority_checks = "E1VUgxWRMV2aPhMJuzz1f9mRDp7KoX5kBZu5oq1SyAqb"
+pinocchio_secure_authority_checks = "3P6BDR7EK5DV7gWyVLSceYRbnUkywjDupYugSQre7eyp"
 
 [scripts]
 test = "npx ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

@@ -19,11 +19,7 @@
 
 #![allow(unexpected_cfgs)]
 
-use pinocchio::{
-    entrypoint,
-    error::ProgramError,
-    AccountView, Address, ProgramResult,
-};
+use pinocchio::{entrypoint, error::ProgramError, AccountView, Address, ProgramResult};
 use solana_program_log::log;
 
 // =============================================================================
@@ -90,16 +86,12 @@ impl UserAccount {
 
         // Parse authority (32 bytes)
         let authority = Address::new_from_array(
-            data[0..32]
-                .try_into()
-                .map_err(|_| ProgramError::InvalidAccountData)?,
+            data[0..32].try_into().map_err(|_| ProgramError::InvalidAccountData)?,
         );
 
         // Parse balance (8 bytes, little-endian)
         let balance = u64::from_le_bytes(
-            data[32..40]
-                .try_into()
-                .map_err(|_| ProgramError::InvalidAccountData)?,
+            data[32..40].try_into().map_err(|_| ProgramError::InvalidAccountData)?,
         );
 
         // Parse is_initialized (1 byte)
@@ -108,12 +100,7 @@ impl UserAccount {
         // Parse bump (1 byte)
         let bump = data[41];
 
-        Ok(Self {
-            authority,
-            balance,
-            is_initialized,
-            bump,
-        })
+        Ok(Self { authority, balance, is_initialized, bump })
     }
 
     /// Serialize UserAccount into raw account data bytes.
@@ -153,9 +140,8 @@ pub fn process_instruction(
     instruction_data: &[u8],
 ) -> ProgramResult {
     // Parse instruction discriminator (first byte)
-    let (discriminator, data) = instruction_data
-        .split_first()
-        .ok_or(ProgramError::InvalidInstructionData)?;
+    let (discriminator, data) =
+        instruction_data.split_first().ok_or(ProgramError::InvalidInstructionData)?;
 
     match *discriminator {
         INITIALIZE_DISCRIMINATOR => initialize(program_id, accounts, data),
@@ -249,9 +235,7 @@ fn update_balance(accounts: &[AccountView], data: &[u8]) -> ProgramResult {
         return Err(ProgramError::InvalidInstructionData);
     }
     let new_balance = u64::from_le_bytes(
-        data[0..8]
-            .try_into()
-            .map_err(|_| ProgramError::InvalidInstructionData)?,
+        data[0..8].try_into().map_err(|_| ProgramError::InvalidInstructionData)?,
     );
 
     // VULNERABILITY: No signer validation - anyone can call this
