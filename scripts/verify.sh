@@ -16,7 +16,7 @@ echo "4. Checking TypeScript compilation..."
 tsc --noEmit
 
 echo "5. Verifying no mainnet references in scripts..."
-if grep -r "mainnet-beta" scripts/ 2>/dev/null; then
+if grep -r "mainnet-beta" scripts/ --exclude="verify.sh" 2>/dev/null; then
   echo "ERROR: Mainnet reference found in scripts"
   exit 1
 fi

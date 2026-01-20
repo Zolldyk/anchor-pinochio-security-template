@@ -1,0 +1,13 @@
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[test.validator]
+url = "http://localhost:8899"
+
+[programs.localnet]
+vulnerable_missing_validation = "Bkh2Wph3fz5iNNcUFy585rRjrRPniCpKs7T3DZZVYeYb"
+secure_missing_validation = "F1TPTovfsL5zGYWdD7xbPT9BFRhEWqpZuSK5Daif2Wd7"
+
+[scripts]
+test = "npx ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

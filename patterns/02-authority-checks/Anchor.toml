@@ -1,0 +1,13 @@
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[test.validator]
+url = "http://localhost:8899"
+
+[programs.localnet]
+vulnerable_authority_checks = "VuLnAuThOrItYcHeCkS111111111111111111111111"
+secure_authority_checks = "SeCuReAuThOrItYcHeCkS11111111111111111111"
+
+[scripts]
+test = "npx ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

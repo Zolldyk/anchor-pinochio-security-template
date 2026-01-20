@@ -3,23 +3,19 @@ set -e
 
 echo "Running all tests..."
 
-# Start local validator in background
-solana-test-validator > /dev/null 2>&1 &
-VALIDATOR_PID=$!
-sleep 5
-
-# Ensure validator cleanup on exit
-trap "kill $VALIDATOR_PID 2>/dev/null || true" EXIT
-
 for pattern in patterns/*/; do
-  if [ -d "$pattern/tests" ]; then
+  # Only test patterns that have actual program code (Cargo.toml exists in a program subdirectory)
+  if [ -d "$pattern/tests" ] && find "$pattern/programs" -name "Cargo.toml" -type f 2>/dev/null | grep -q .; then
     echo "Testing $(basename $pattern)..."
     cd "$pattern"
-    anchor test --skip-local-validator || {
+    # Let anchor manage its own local validator with pre-funded wallet
+    anchor test || {
       echo "Tests failed for $(basename $pattern)"
       exit 1
     }
     cd - > /dev/null
+  else
+    echo "Skipping $(basename $pattern) (no programs implemented yet)"
   fi
 done
 

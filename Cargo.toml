@@ -4,16 +4,21 @@ resolver = "2"
 members = [
     "patterns/01-missing-validation/programs/vulnerable",
     "patterns/01-missing-validation/programs/secure",
-    "patterns/02-authority-checks/programs/vulnerable",
-    "patterns/02-authority-checks/programs/secure",
-    "patterns/03-unsafe-arithmetic/programs/vulnerable",
-    "patterns/03-unsafe-arithmetic/programs/secure",
-    "patterns/04-cpi-reentrancy/programs/vulnerable",
-    "patterns/04-cpi-reentrancy/programs/secure",
-    "patterns/05-pda-derivation/programs/vulnerable",
-    "patterns/05-pda-derivation/programs/secure",
-    "patterns/06-token-validation/programs/vulnerable",
-    "patterns/06-token-validation/programs/secure",
+    # TODO: Uncomment when pattern is implemented
+    # "patterns/02-authority-checks/programs/vulnerable",
+    # "patterns/02-authority-checks/programs/secure",
+    # TODO: Uncomment when pattern is implemented
+    # "patterns/03-unsafe-arithmetic/programs/vulnerable",
+    # "patterns/03-unsafe-arithmetic/programs/secure",
+    # TODO: Uncomment when pattern is implemented
+    # "patterns/04-cpi-reentrancy/programs/vulnerable",
+    # "patterns/04-cpi-reentrancy/programs/secure",
+    # TODO: Uncomment when pattern is implemented
+    # "patterns/05-pda-derivation/programs/vulnerable",
+    # "patterns/05-pda-derivation/programs/secure",
+    # TODO: Uncomment when pattern is implemented
+    # "patterns/06-token-validation/programs/vulnerable",
+    # "patterns/06-token-validation/programs/secure",
 ]
 
 [workspace.dependencies]
@@ -22,6 +27,10 @@ anchor-spl = "0.32.1"
 solana-program = "3.0"
 spl-token = "3.5"          # Legacy token support
 spl-token-2022 = "10.0"   # Modern token standard (recommended for new code)
+
+[workspace.lints.rust]
+# Allow cfg warnings from Anchor/Solana macros that use cfgs only valid for BPF target
+unexpected_cfgs = "allow"
 
 [profile.release]
 overflow-checks = true
