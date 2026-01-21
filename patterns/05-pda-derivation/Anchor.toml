@@ -6,8 +6,8 @@ wallet = "~/.config/solana/id.json"
 url = "http://localhost:8899"
 
 [programs.localnet]
-vulnerable_pda_derivation = "VuLnPdAdErIvAtIoN11111111111111111111111111"
-secure_pda_derivation = "SeCuRePdAdErIvAtIoN1111111111111111111111"
+vulnerable_pda_derivation = "4bEDU5VynGAFuZ1MXF1HU4oNLDv5XaDyBZwDARYszCwm"
+secure_pda_derivation = "AjgRX5jTbb96u5knHCmPhco94FX5UUk325kZSzX5fngt"
 
 [scripts]
 test = "npx ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

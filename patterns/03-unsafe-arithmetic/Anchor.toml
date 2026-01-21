@@ -6,8 +6,12 @@ wallet = "~/.config/solana/id.json"
 url = "http://localhost:8899"
 
 [programs.localnet]
-vulnerable_unsafe_arithmetic = "VuLnUnSaFeArItHmEtIc11111111111111111111111"
-secure_unsafe_arithmetic = "SeCuReUnSaFeArItHmEtIc1111111111111111111"
+vulnerable_unsafe_arithmetic = "7H6Q6tavPU58GpJfdsHvXUD9G75gF3okF8SoF7QxNaS4"
+secure_unsafe_arithmetic = "9tncVxSh8pPnfwrzStTwnmaNd9Zi8PoQZugTBtqUV1ji"
+pinocchio_vulnerable_unsafe_arithmetic = "4R677cX6tV6G5YeWMw1ndtPpDzvD4zrdz6HbNYWF9oQi"
+pinocchio_secure_unsafe_arithmetic = "CVyZU6X4vBxHQaQar29cho6Gv9qYLX8wu1wBYCq1K4jW"
+token_vulnerable_unsafe_arithmetic = "5j5GEqUp7L76EvzNjVYN1d6f1Vs287b2anJRtEbrmUoH"
+token_secure_unsafe_arithmetic = "5BPg6JQc92Uey4F9KYqu9aCXvRjeETCeX1Qw6VYDkpva"
 
 [scripts]
 test = "npx ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

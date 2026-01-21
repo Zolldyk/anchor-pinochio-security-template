@@ -1,0 +1,25 @@
+[package]
+name = "token-vulnerable-unsafe-arithmetic"
+version = "0.1.0"
+description = "Token program demonstrating unsafe arithmetic with SPL tokens"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = { workspace = true }
+anchor-spl = { workspace = true }
+
+[dev-dependencies]
+
+[lints]
+workspace = true

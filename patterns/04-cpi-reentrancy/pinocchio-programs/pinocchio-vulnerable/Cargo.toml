@@ -1,0 +1,15 @@
+[package]
+name = "pinocchio-vulnerable-cpi-reentrancy"
+version = "0.1.0"
+description = "Pinocchio program demonstrating CPI re-entrancy vulnerability"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+pinocchio = { version = "0.10", features = ["alloc", "cpi"] }
+solana-program-log = "1.1"
+
+[features]
+no-entrypoint = []

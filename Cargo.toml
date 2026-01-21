@@ -11,15 +11,20 @@ members = [
     "patterns/02-authority-checks/programs/secure",
     "patterns/02-authority-checks/pinocchio-programs/pinocchio-vulnerable",
     "patterns/02-authority-checks/pinocchio-programs/pinocchio-secure",
-    # TODO: Uncomment when pattern is implemented
-    # "patterns/03-unsafe-arithmetic/programs/vulnerable",
-    # "patterns/03-unsafe-arithmetic/programs/secure",
-    # TODO: Uncomment when pattern is implemented
-    # "patterns/04-cpi-reentrancy/programs/vulnerable",
-    # "patterns/04-cpi-reentrancy/programs/secure",
-    # TODO: Uncomment when pattern is implemented
-    # "patterns/05-pda-derivation/programs/vulnerable",
-    # "patterns/05-pda-derivation/programs/secure",
+    "patterns/03-unsafe-arithmetic/programs/vulnerable",
+    "patterns/03-unsafe-arithmetic/programs/secure",
+    "patterns/03-unsafe-arithmetic/pinocchio-programs/pinocchio-vulnerable",
+    "patterns/03-unsafe-arithmetic/pinocchio-programs/pinocchio-secure",
+    "patterns/03-unsafe-arithmetic/programs/token-vulnerable",
+    "patterns/03-unsafe-arithmetic/programs/token-secure",
+    "patterns/04-cpi-reentrancy/programs/vulnerable",
+    "patterns/04-cpi-reentrancy/programs/secure",
+    "patterns/04-cpi-reentrancy/programs/attacker",
+    "patterns/04-cpi-reentrancy/pinocchio-programs/pinocchio-vulnerable",
+    "patterns/04-cpi-reentrancy/pinocchio-programs/pinocchio-secure",
+    "patterns/04-cpi-reentrancy/pinocchio-programs/pinocchio-attacker",
+    "patterns/05-pda-derivation/programs/vulnerable",
+    "patterns/05-pda-derivation/programs/secure",
     # TODO: Uncomment when pattern is implemented
     # "patterns/06-token-validation/programs/vulnerable",
     # "patterns/06-token-validation/programs/secure",
@@ -40,3 +45,7 @@ unexpected_cfgs = "allow"
 overflow-checks = true
 lto = "fat"
 codegen-units = 1
+
+# Pin constant_time_eq to version compatible with SBF toolchain's rustc 1.84
+[workspace.dependencies.constant_time_eq]
+version = "0.3.1"
