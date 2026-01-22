@@ -1,0 +1,16 @@
+[package]
+name = "pinocchio-secure-pda-derivation"
+version = "0.1.0"
+description = "Pinocchio implementation of secure PDA derivation pattern"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[features]
+default = []
+no-entrypoint = []
+
+[dependencies]
+pinocchio = { version = "0.10", features = ["alloc"] }
+solana-program-log = "1.1"

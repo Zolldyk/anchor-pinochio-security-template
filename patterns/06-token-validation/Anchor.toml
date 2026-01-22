@@ -6,8 +6,10 @@ wallet = "~/.config/solana/id.json"
 url = "http://localhost:8899"
 
 [programs.localnet]
-vulnerable_token_validation = "VuLnToKeNvAlIdAtIoN111111111111111111111111"
-secure_token_validation = "SeCuReToKeNvAlIdAtIoN11111111111111111111"
+vulnerable_token_validation = "7BuzUJe5wBqrsmnM6VDjKTM4S3TWwDtm2rHPPWYRb9px"
+secure_token_validation = "9EaBSBiZ2AHzL8Q5p9SqrC8Xgw2uExJMQzQttbA7vy4H"
+pinocchio_vulnerable_token_validation = "4dPjoc3tbiQjXMzxy1fS2ktuCPHcV6TMJdeVEonnNFVR"
+pinocchio_secure_token_validation = "CF7pz8p5P9iz2cqr4Lfd1eS2PBPtKij63YAgcSRPaGEt"
 
 [scripts]
 test = "npx ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

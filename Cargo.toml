@@ -25,9 +25,12 @@ members = [
     "patterns/04-cpi-reentrancy/pinocchio-programs/pinocchio-attacker",
     "patterns/05-pda-derivation/programs/vulnerable",
     "patterns/05-pda-derivation/programs/secure",
-    # TODO: Uncomment when pattern is implemented
-    # "patterns/06-token-validation/programs/vulnerable",
-    # "patterns/06-token-validation/programs/secure",
+    "patterns/05-pda-derivation/pinocchio-programs/pinocchio-vulnerable",
+    "patterns/05-pda-derivation/pinocchio-programs/pinocchio-secure",
+    "patterns/06-token-validation/programs/vulnerable",
+    "patterns/06-token-validation/programs/secure",
+    "patterns/06-token-validation/pinocchio-programs/pinocchio-vulnerable",
+    "patterns/06-token-validation/pinocchio-programs/pinocchio-secure",
 ]
 
 [workspace.dependencies]
