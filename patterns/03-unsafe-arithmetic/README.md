@@ -425,7 +425,7 @@ patterns/03-unsafe-arithmetic/
 ├── Anchor.toml
 └── README.md
 
-docs/deep-dive/
+deep-dive/
 └── unsafe-arithmetic.md      # Comprehensive educational deep-dive
 ```
 
@@ -439,9 +439,9 @@ For comprehensive educational content on arithmetic vulnerabilities, including:
 - Decision flowcharts for method selection
 - Framework assistance analysis (Anchor vs Pinocchio)
 
-**See: [Deep Dive: Unsafe Arithmetic](/docs/deep-dive/unsafe-arithmetic.md)**
+**See: [Deep Dive: Unsafe Arithmetic](/deep-dive/unsafe-arithmetic.md)**
 
-For detailed framework comparison content, see the [Framework Assistance](/docs/deep-dive/unsafe-arithmetic.md#framework-assistance) section.
+For detailed framework comparison content, see the [Framework Assistance](/deep-dive/unsafe-arithmetic.md#framework-assistance) section.
 
 ## Token Manipulation Example
 

@@ -1,3 +1,5 @@
+#![allow(unexpected_cfgs)]
+
 //! # Secure Authority Checks Program
 //!
 //! This program demonstrates **SECURE** authority check patterns in Solana.

@@ -559,11 +559,8 @@ fn withdraw(_program_id: &Address, accounts: &[AccountView], data: &[u8]) -> Pro
     // Build PDA signer seeds for vault authority
     let vault_bump = vault_state.bump;
     let bump_bytes = [vault_bump];
-    let seeds = [
-        Seed::from(VAULT_SEED),
-        Seed::from(vault_state.mint.as_ref()),
-        Seed::from(&bump_bytes),
-    ];
+    let seeds =
+        [Seed::from(VAULT_SEED), Seed::from(vault_state.mint.as_ref()), Seed::from(&bump_bytes)];
 
     // SECURITY: Transfer to validated destination only
     spl_token_transfer_signed(
@@ -660,14 +657,18 @@ fn mint_reward(_program_id: &Address, accounts: &[AccountView], data: &[u8]) -> 
     // Build PDA signer seeds for mint authority
     let vault_bump = vault_state.bump;
     let bump_bytes = [vault_bump];
-    let seeds = [
-        Seed::from(VAULT_SEED),
-        Seed::from(vault_state.mint.as_ref()),
-        Seed::from(&bump_bytes),
-    ];
+    let seeds =
+        [Seed::from(VAULT_SEED), Seed::from(vault_state.mint.as_ref()), Seed::from(&bump_bytes)];
 
     // SECURITY: Mint with verified authority
-    spl_token_mint_to_signed(mint, destination_token_account, vault, token_program, amount, &seeds)?;
+    spl_token_mint_to_signed(
+        mint,
+        destination_token_account,
+        vault,
+        token_program,
+        amount,
+        &seeds,
+    )?;
 
     log!("SECURE: Minted reward tokens (authority verified)");
 

@@ -1,3 +1,5 @@
+#![allow(unexpected_cfgs)]
+
 //! ⚠️  EDUCATIONAL PURPOSE ONLY - MALICIOUS CODE DEMONSTRATION ⚠️
 //!
 //! Attacker Program for CPI Re-entrancy Attack

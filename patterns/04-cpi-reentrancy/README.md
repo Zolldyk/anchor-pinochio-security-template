@@ -715,7 +715,7 @@ patterns/04-cpi-reentrancy/
 ├── Anchor.toml
 └── README.md
 
-docs/deep-dive/
+deep-dive/
 └── cpi-reentrancy.md            # Comprehensive educational deep-dive
 ```
 
@@ -729,7 +729,7 @@ For comprehensive educational content on CPI re-entrancy vulnerabilities, includ
 - Common vulnerable patterns in DeFi applications
 - Decision guide for defense pattern selection
 
-**See: [Deep Dive: CPI Re-entrancy](/docs/deep-dive/cpi-reentrancy.md)**
+**See: [Deep Dive: CPI Re-entrancy](/deep-dive/cpi-reentrancy.md)**
 
 ## Related Patterns
 

@@ -1,3 +1,5 @@
+#![allow(unexpected_cfgs)]
+
 //! Secure CPI Re-entrancy Program
 //!
 //! This program demonstrates the CORRECT pattern for handling CPI calls that

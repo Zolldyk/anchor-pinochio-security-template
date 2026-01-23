@@ -191,13 +191,13 @@ For comprehensive documentation on authority check patterns, see the deep-dive s
 
 | Document | Description |
 |----------|-------------|
-| [Index](../../docs/deep-dive/02-authority-checks/index.md) | Overview and table of contents |
-| [Ownership Model](../../docs/deep-dive/02-authority-checks/ownership-model.md) | Solana's account ownership model |
-| [Common Mistakes](../../docs/deep-dive/02-authority-checks/common-mistakes.md) | Authority check failures with examples |
-| [Real-World Examples](../../docs/deep-dive/02-authority-checks/real-world-examples.md) | Historical exploits and case studies |
-| [Web Comparison](../../docs/deep-dive/02-authority-checks/web-comparison.md) | RBAC/ACL mapping to Solana |
-| [Decision Tree](../../docs/deep-dive/02-authority-checks/decision-tree.md) | Systematic approach to authority design |
-| [Common Patterns](../../docs/deep-dive/02-authority-checks/common-patterns.md) | Reusable authority patterns |
+| [Index](../../deep-dive/02-authority-checks/index.md) | Overview and table of contents |
+| [Ownership Model](../../deep-dive/02-authority-checks/ownership-model.md) | Solana's account ownership model |
+| [Common Mistakes](../../deep-dive/02-authority-checks/common-mistakes.md) | Authority check failures with examples |
+| [Real-World Examples](../../deep-dive/02-authority-checks/real-world-examples.md) | Historical exploits and case studies |
+| [Web Comparison](../../deep-dive/02-authority-checks/web-comparison.md) | RBAC/ACL mapping to Solana |
+| [Decision Tree](../../deep-dive/02-authority-checks/decision-tree.md) | Systematic approach to authority design |
+| [Common Patterns](../../deep-dive/02-authority-checks/common-patterns.md) | Reusable authority patterns |
 
 ## Pinocchio Framework Comparison
 

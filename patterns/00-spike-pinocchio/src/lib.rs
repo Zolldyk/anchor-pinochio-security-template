@@ -1,5 +1,7 @@
 //! Minimal Pinocchio spike to verify compatibility with Anchor workspace
 
+#![allow(unexpected_cfgs)]
+
 use pinocchio::{entrypoint, AccountView, Address, ProgramResult};
 
 // Program ID constant (Pinocchio 0.10 uses Address instead of Pubkey)

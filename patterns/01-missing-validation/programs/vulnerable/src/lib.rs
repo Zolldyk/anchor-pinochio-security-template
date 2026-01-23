@@ -1,3 +1,5 @@
+#![allow(unexpected_cfgs)]
+
 //! # Vulnerable Missing Validation Program
 //!
 //! ⚠️ **WARNING: This program contains INTENTIONAL security vulnerabilities for educational purposes.**

@@ -1,3 +1,5 @@
+#![allow(unexpected_cfgs)]
+
 //! # Secure Token Validation Pattern
 //!
 //! This program demonstrates secure SPL Token integration with proper validation

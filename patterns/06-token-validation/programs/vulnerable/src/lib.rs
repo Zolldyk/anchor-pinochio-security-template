@@ -1,3 +1,5 @@
+#![allow(unexpected_cfgs)]
+
 //! # Vulnerable Token Validation Pattern
 //!
 //! This program demonstrates common SPL Token integration vulnerabilities that

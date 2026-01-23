@@ -1,3 +1,5 @@
+#![allow(unexpected_cfgs)]
+
 //! # Secure Missing Validation Program
 //!
 //! ✅ **This program demonstrates PROPER account validation in Solana programs.**

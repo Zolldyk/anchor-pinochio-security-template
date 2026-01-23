@@ -1,3 +1,5 @@
+#![allow(unexpected_cfgs)]
+
 //! # Vulnerable Authority Checks Program
 //!
 //! This program demonstrates **INSECURE** authority check patterns in Solana.

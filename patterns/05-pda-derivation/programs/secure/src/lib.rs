@@ -1,17 +1,19 @@
+#![allow(unexpected_cfgs)]
+
 use anchor_lang::prelude::*;
 
 // Program ID from generated keypair
 declare_id!("AjgRX5jTbb96u5knHCmPhco94FX5UUk325kZSzX5fngt");
 
-/// PDA Derivation Secure Program
-///
-/// This program demonstrates secure PDA patterns:
-/// - Always re-derive PDAs using seeds constraints
-/// - Enforce canonical bump seeds
-/// - Use has_one constraints for relationship validation
-/// - Proper seed component validation
-///
-/// EDUCATIONAL PURPOSE - Demonstrates security best practices
+// PDA Derivation Secure Program
+//
+// This program demonstrates secure PDA patterns:
+// - Always re-derive PDAs using seeds constraints
+// - Enforce canonical bump seeds
+// - Use has_one constraints for relationship validation
+// - Proper seed component validation
+//
+// EDUCATIONAL PURPOSE - Demonstrates security best practices
 
 // ============================================================================
 // CONSTANTS

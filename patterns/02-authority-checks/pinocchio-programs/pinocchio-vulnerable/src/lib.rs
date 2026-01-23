@@ -45,6 +45,7 @@ pub const MAX_ADMINS: usize = 3;
 /// - fee_basis_points (u16): 2 bytes
 /// - paused (bool): 1 byte
 /// - bump (u8): 1 byte
+///
 /// Total: 133 bytes
 pub const ADMIN_CONFIG_SIZE: usize = 32 + 96 + 1 + 2 + 1 + 1;
 
@@ -55,6 +56,7 @@ pub const ADMIN_CONFIG_SIZE: usize = 32 + 96 + 1 + 2 + 1 + 1;
 /// - can_pause (bool): 1 byte
 /// - is_active (bool): 1 byte
 /// - bump (u8): 1 byte
+///
 /// Total: 68 bytes
 pub const MANAGER_ACCOUNT_SIZE: usize = 32 + 32 + 1 + 1 + 1 + 1;
 
@@ -116,10 +118,10 @@ impl AdminConfig {
             Address::new_from_array([0u8; 32]),
             Address::new_from_array([0u8; 32]),
         ];
-        for i in 0..MAX_ADMINS {
+        for (i, admin) in admin_list.iter_mut().enumerate() {
             let start = 32 + (i * 32);
             let end = start + 32;
-            admin_list[i] = Address::new_from_array(
+            *admin = Address::new_from_array(
                 data[start..end].try_into().map_err(|_| ProgramError::InvalidAccountData)?,
             );
         }

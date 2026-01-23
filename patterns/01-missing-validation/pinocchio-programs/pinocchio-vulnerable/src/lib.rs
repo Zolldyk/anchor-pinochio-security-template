@@ -41,6 +41,7 @@ pub const ID: Address = Address::new_from_array([
 /// - balance (u64): 8 bytes
 /// - is_initialized (bool): 1 byte
 /// - bump (u8): 1 byte
+///
 /// Total: 42 bytes
 pub const USER_ACCOUNT_SIZE: usize = 32 + 8 + 1 + 1;
 

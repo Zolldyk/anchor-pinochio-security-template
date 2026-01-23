@@ -1,3 +1,5 @@
+#![allow(unexpected_cfgs)]
+
 //! Vulnerable CPI Re-entrancy Program
 //!
 //! This program demonstrates a DANGEROUS pattern where state is updated AFTER a CPI call,

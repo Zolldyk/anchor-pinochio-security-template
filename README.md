@@ -1,10 +1,32 @@
 # Anchor/Pinocchio Security Template
 
-> **EDUCATIONAL REPOSITORY**: This project contains deliberately vulnerable Solana programs for security education. DO NOT deploy to mainnet.
+> **WARNING: EDUCATIONAL REPOSITORY** - This project contains **deliberately vulnerable** Solana programs for security education. These programs have intentional security flaws. **DO NOT deploy to mainnet or use in production.**
 
 ## Overview
 
-A comprehensive educational resource for learning Solana smart contract security through hands-on vulnerability analysis. Each pattern demonstrates a common security vulnerability with both vulnerable and secure implementations.
+A comprehensive educational resource for learning Solana smart contract security through hands-on vulnerability analysis. This repository provides a structured learning environment where developers can safely explore common security vulnerabilities, understand how exploits work, and learn defensive coding patterns—all without risking real assets.
+
+Each of the six vulnerability patterns includes both a deliberately vulnerable implementation and a secure implementation side-by-side. This approach allows you to see exactly what makes code vulnerable and how to fix it.
+
+### What You'll Learn
+
+- **Missing Account Validation** - How missing owner/signer checks allow unauthorized access
+- **Authority Check Failures** - How insufficient authority verification enables privilege escalation
+- **Unsafe Arithmetic** - How unchecked integer overflow/underflow corrupts program state
+- **CPI Re-entrancy** - How cross-program invocation can be manipulated for state exploitation
+- **PDA Derivation Issues** - How incorrect PDA seeds or validation enables unauthorized access
+- **SPL Token Validation** - How improper token account validation enables token theft
+
+### Educational Approach
+
+Each pattern follows a consistent structure:
+
+1. **Vulnerable Program** - Demonstrates the security flaw with intentionally exploitable code
+2. **Secure Program** - Shows the correct implementation with proper security checks
+3. **Exploit Tests** - Proves the vulnerability works against the vulnerable program
+4. **Security Tests** - Confirms the secure program correctly rejects attacks
+
+Both Anchor and Pinocchio implementations are provided for all patterns, allowing you to learn security concepts across different Solana development frameworks.
 
 ## Prerequisites
 
@@ -144,6 +166,23 @@ npm test
 ./scripts/test-all.sh
 ```
 
+**Expected Times:**
+- Build (all programs): < 5 minutes
+- Test suite (all patterns): < 2 minutes
+
+## Vulnerability Patterns
+
+| # | Pattern | Difficulty | Description |
+|---|---------|------------|-------------|
+| 01 | [Missing Account Validation](patterns/01-missing-validation/README.md) | Beginner | Missing owner/signer checks allow unauthorized access |
+| 02 | [Authority Check Failures](patterns/02-authority-checks/README.md) | Beginner | Insufficient authority verification enables privilege escalation |
+| 03 | [Unsafe Arithmetic](patterns/03-unsafe-arithmetic/README.md) | Intermediate | Unchecked integer overflow/underflow corrupts state |
+| 04 | [CPI Re-entrancy](patterns/04-cpi-reentrancy/README.md) | Advanced | Cross-program invocation manipulation for state exploitation |
+| 05 | [PDA Derivation Issues](patterns/05-pda-derivation/README.md) | Advanced | Incorrect PDA seeds or validation enables unauthorized access |
+| 06 | [SPL Token Validation](patterns/06-token-validation/README.md) | Advanced | Improper token account validation enables theft |
+
+For a recommended study order, see [LEARNING_PATH.md](LEARNING_PATH.md).
+
 ### Expected Output
 
 When tests run successfully, you'll see output like:
@@ -163,24 +202,29 @@ Testing 01-missing-validation...
 
 ```
 anchor-pinochio-security-template/
-├── patterns/                    # Vulnerability pattern modules
-│   ├── 01-missing-validation/   # Each pattern is self-contained
-│   │   ├── programs/vulnerable/ # Deliberately vulnerable code
-│   │   ├── programs/secure/     # Fixed implementation
-│   │   ├── tests/               # Exploit demonstrations
-│   │   └── README.md            # Pattern-specific docs
-│   ├── 02-arithmetic-overflow/
-│   ├── 03-improper-signer/
-│   ├── 04-account-confusion/
-│   ├── 05-reinitialization/
-│   └── 06-pda-validation/
-├── scripts/                     # Build and test automation
-│   ├── build-all.sh            # Build all programs
-│   ├── test-all.sh             # Run all tests
-│   ├── deploy-devnet.sh        # Deploy to devnet (educational only)
-│   └── verify.sh               # Run verification checks
-├── docs/                        # Project documentation
-└── README.md                    # This file
+├── patterns/                       # Vulnerability pattern modules
+│   ├── 01-missing-validation/      # Each pattern is self-contained
+│   │   ├── programs/               # Anchor implementations
+│   │   │   ├── vulnerable/         # Deliberately vulnerable code
+│   │   │   └── secure/             # Fixed implementation
+│   │   ├── pinocchio-programs/     # Pinocchio implementations
+│   │   │   ├── vulnerable/
+│   │   │   └── secure/
+│   │   ├── tests/                  # Exploit demonstrations
+│   │   ├── docs/                   # Pattern-specific documentation
+│   │   └── README.md               # Pattern overview
+│   ├── 02-authority-checks/
+│   ├── 03-unsafe-arithmetic/
+│   ├── 04-cpi-reentrancy/
+│   ├── 05-pda-derivation/
+│   └── 06-token-validation/
+├── scripts/                        # Build and test automation
+│   ├── build-all.sh                # Build all programs
+│   ├── test-all.sh                 # Run all tests
+│   ├── deploy-devnet.sh            # Deploy to devnet (educational only)
+│   └── verify.sh                   # Run verification checks
+├── docs/                           # Project documentation
+└── README.md                       # This file
 ```
 
 ## Local Validator Testing
@@ -359,21 +403,32 @@ sudo apt-get install build-essential pkg-config libssl-dev
 
 ## npm Scripts Reference
 
-| Script | Command | Description |
-|--------|---------|-------------|
-| `npm run build` | `./scripts/build-all.sh` | Build all programs |
-| `npm test` | `./scripts/test-all.sh` | Run full test suite |
-| `npm run test:01` | `cd patterns/01-* && anchor test` | Test pattern 01 |
-| `npm run lint` | `cargo clippy --all-targets -- -D warnings` | Run linter |
-| `npm run format` | `cargo fmt --all` | Format code |
+| Script | Description |
+|--------|-------------|
+| `npm run build` | Build all programs |
+| `npm test` | Run full test suite |
+| `npm run test:01` | Test pattern 01 (Missing Validation) |
+| `npm run test:02` | Test pattern 02 (Authority Checks) |
+| `npm run test:03` | Test pattern 03 (Unsafe Arithmetic) |
+| `npm run test:04` | Test pattern 04 (CPI Re-entrancy) |
+| `npm run test:05` | Test pattern 05 (PDA Derivation) |
+| `npm run test:06` | Test pattern 06 (Token Validation) |
+| `npm run deploy` | Deploy to devnet (educational only) |
+| `npm run verify` | Run verification checks |
+| `npm run lint` | Run Clippy linter |
+| `npm run format` | Format code with rustfmt |
 
-## Learning Path
+## Acknowledgments
 
-See [LEARNING_PATH.md](docs/LEARNING_PATH.md) for the recommended order to study vulnerability patterns.
+### Bounty Support
 
-## Contributing
+- **SuperteamNG** - Security bounty program support
 
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+### Built With
+
+- [Anchor](https://www.anchor-lang.com/) - Solana smart contract framework
+- [Pinocchio](https://github.com/febo/pinocchio) - Lightweight Solana program library
+- [Solana](https://solana.com/) - High-performance blockchain
 
 ## License
 

@@ -1,16 +1,18 @@
+#![allow(unexpected_cfgs)]
+
 use anchor_lang::prelude::*;
 
 // Program ID from generated keypair
 declare_id!("4bEDU5VynGAFuZ1MXF1HU4oNLDv5XaDyBZwDARYszCwm");
 
-/// PDA Derivation Vulnerable Program
-///
-/// This program demonstrates common PDA-related vulnerabilities:
-/// - Accepting user-provided PDAs without re-derivation
-/// - Not validating canonical bump seeds
-/// - Missing seed validation allowing unauthorized access
-///
-/// EDUCATIONAL PURPOSE ONLY - DO NOT USE IN PRODUCTION
+// PDA Derivation Vulnerable Program
+//
+// This program demonstrates common PDA-related vulnerabilities:
+// - Accepting user-provided PDAs without re-derivation
+// - Not validating canonical bump seeds
+// - Missing seed validation allowing unauthorized access
+//
+// EDUCATIONAL PURPOSE ONLY - DO NOT USE IN PRODUCTION
 
 // ============================================================================
 // CONSTANTS
