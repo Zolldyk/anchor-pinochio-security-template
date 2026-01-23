@@ -418,11 +418,6 @@ sudo apt-get install build-essential pkg-config libssl-dev
 | `npm run lint` | Run Clippy linter |
 | `npm run format` | Format code with rustfmt |
 
-## Acknowledgments
-
-### Bounty Support
-
-- **SuperteamNG** - Security bounty program support
 
 ### Built With
 
